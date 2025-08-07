@@ -1,7 +1,14 @@
 import React from 'react'
 import { API_BASE_URL } from '../utils/localhost';
 
-const Products = ({name,imagePath}) => {
+const Products = ({name,imagePath,updateItemCount}) => {
+
+  const handleChange = (e) => {
+    const currentValue = e.target.value;
+    updateItemCount(name, currentValue);
+    //console.log(`Updated ${name} count to ${newItemCount}`);
+  }
+
   return (
     <div style={{textAlign:'center'}}>
         <img 
@@ -17,6 +24,7 @@ const Products = ({name,imagePath}) => {
                 style={{ marginLeft: '7px'}}
                 min={0}
                 defaultValue={0}
+                onChange={handleChange}
             >
             </input>
         </form>

@@ -1,7 +1,7 @@
 import { createContext, useEffect, useMemo, useState } from "react";
 import Products from "../components/Products";
 
-export const OrderContext = createContext('');
+export const OrderContext = createContext();
 
 export function OrderContextProvider(props){
 

@@ -1,12 +1,18 @@
 import './App.css';
 import OrderPage from './pages/OderPage';
 import SummaryPage from './pages/SummaryPage';
+import CompletePage from './pages/CompletePage';
+import React, { useState } from 'react';
 
 function App() {
+
+  const [step, setStep] = useState(0);
+
   return (
     <div style={{padding : '4rem'}}>
-      <OrderPage/>
-      <SummaryPage/>
+      {step === 0 && <OrderPage setStep={setStep}/>}
+      {step === 1 && <SummaryPage setStep={setStep}/>}
+      {step === 2 && <CompletePage setStep={setStep}/>}
     </div>
   );
 }
